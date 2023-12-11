@@ -24,8 +24,10 @@ const ArticleCard = (props) => {
                     <li>{article.author}</li>
                 </Typography>
                 <Typography variant="h6" component="div" id="card-links">
-                    <li>comments  votes</li>
+                    <li>{article.comment_count} comments</li>
+                    <li>{article.votes} votes</li>
                 </Typography>
+                <button id="read-more" onClick={() => { console.log(article.article_id) }}>Read more</button>
             </CardContent>
         </Card>
     )
