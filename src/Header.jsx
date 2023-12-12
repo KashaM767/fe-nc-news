@@ -5,7 +5,8 @@ const Header = () => {
     return (
         <header>
             <h1 id="header">NC News</h1>
-            <Link to="/">Home</Link>
+            <Link to="/">Home</Link><br />
+            <Link to="/articles">Articles</Link>
 
         </header>
 

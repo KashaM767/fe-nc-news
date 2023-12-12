@@ -6,19 +6,22 @@ import Typography from '@mui/material/Typography';
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CardActionArea } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const ArticleCard = (props) => {
     const { article } = props
     const [id, setID] = useState(0)
-    console.log(id)
+    const navigate = useNavigate();
+
+
+
     return (
         <Card sx={{ maxWidth: 225 }} className='item-card'>
-            <CardActionArea onClick={() => { setID(article.article_id) }}>
-
-                {/* <Link
-                    key={article.article_id}
-                    to={`/articles/${article.article_id}`}
-                > */}
+            <CardActionArea onClick={() => {
+                navigate(`/articles/${article.article_id}`)
+            }}>
                 <CardMedia
                     component="img"
                     height="100"
@@ -37,7 +40,6 @@ const ArticleCard = (props) => {
                         <li>{article.votes} votes</li>
                     </Typography>
                 </CardContent>
-                {/* </Link> */}
             </CardActionArea >
         </Card>
 

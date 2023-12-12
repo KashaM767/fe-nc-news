@@ -7,14 +7,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import './ArticleCard';
 
-const Article = ({ id }) => {
+const Article = () => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
-    console.log(id)
+    const id = 7;
+
 
     useEffect(() => {
-        getArticle(2).then((article) => {
+        getArticle(id).then((article) => {
             setArticle(article)
             setIsLoading(false)
         })
