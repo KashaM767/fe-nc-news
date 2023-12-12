@@ -8,6 +8,7 @@ import Article from './Article';
 
 
 
+
 function App() {
   return (
     <>
@@ -16,7 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<ArticleList />} />
+
           <Route path="/articles/:article_id" element={<Article />} />
+
         </Routes>
 
       </BrowserRouter>

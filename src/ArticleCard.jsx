@@ -7,20 +7,24 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CardActionArea } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import Article from './Article';
 
 
 
 const ArticleCard = (props) => {
     const { article } = props
-    const [id, setID] = useState(0)
+    const [id, setId] = useState(0)
     const navigate = useNavigate();
+
 
 
 
     return (
         <Card sx={{ maxWidth: 225 }} className='item-card'>
             <CardActionArea onClick={() => {
-                navigate(`/articles/${article.article_id}`)
+                setId(article.article_id);
+                navigate(`/articles/${article.article_id}`);
+                <Article id={id} />
             }}>
                 <CardMedia
                     component="img"

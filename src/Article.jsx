@@ -5,17 +5,21 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import './ArticleCard';
+import ArticleCard from "./ArticleCard";
+import { useParams } from "react-router-dom";
 
-const Article = () => {
+const Article = ({ id }) => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
-    const id = 7;
+    const { article_id } = useParams();
+    console.log(id)
+
+
 
 
     useEffect(() => {
-        getArticle(id).then((article) => {
+        getArticle(article_id).then((article) => {
             setArticle(article)
             setIsLoading(false)
         })
@@ -24,6 +28,8 @@ const Article = () => {
                 setIsError(true)
             })
     }, [])
+
+
 
     if (isLoading) return <p>Loading...</p>
     if (isError) return <p>Something went wrong</p>
@@ -44,7 +50,7 @@ const Article = () => {
                     <li>{article.body}</li>
                 </Typography>
                 <Typography variant="h6" component="div" id="author">
-                    <li>{article.author} on {article.created_at}</li>
+                    <li>{article.author} on {article.created_at.slice(0, 10)}</li>
                 </Typography>
                 <Typography variant="h6" component="div" id="card-links">
                     <li>{article.comment_count} comments</li>
