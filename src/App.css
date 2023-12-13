@@ -25,6 +25,7 @@ ul {
   margin-bottom: 3em;
   width: 400px;
   font-size: small;
+  margin-top: none;
 }
 
 li {
@@ -48,9 +49,9 @@ li {
 }
 
 #author {
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: small;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 #home-links {
