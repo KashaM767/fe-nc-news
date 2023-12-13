@@ -26,3 +26,10 @@ export const getComments = (id) => {
             return data.comments
         });
 };
+
+export const patchArticleVote = (id, obj) => {
+    return newsApi.patch(`/articles/${id}`, obj)
+        .then(({ data }) => {
+            return data.article
+        });
+};

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getArticle } from '../utils/api';
+import { getArticle, patchArticleVote } from '../utils/api';
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,13 +7,36 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useParams } from "react-router-dom";
 import CommentsList from "./CommentsList";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
-const Article = ({ id }) => {
+
+const Article = () => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
     const { article_id } = useParams();
     const [showComments, setShowComments] = useState(false);
+    const [addVote, setAddVote] = useState(0);
+
+    const handleLikeClick = () => {
+        setAddVote((currVote) => currVote + 1);
+        setIsError(false);
+        patchArticleVote(article_id, { inc_votes: 1, })
+            .catch((err) => {
+                setIsError(true);
+            });
+    };
+
+    const handleDislikeClick = () => {
+        setAddVote((currVote) => currVote - 1);
+        setIsError(false);
+        patchArticleVote(article_id, { inc_votes: -1, })
+            .catch((err) => {
+                setIsError(true);
+            });
+    };
+
 
     useEffect(() => {
         getArticle(article_id).then((article) => {
@@ -51,6 +74,12 @@ const Article = ({ id }) => {
                     <li>{article.comment_count} comments</li>
                     <li>{article.votes} votes</li>
                 </Typography>
+                <div>
+                    <Stack spacing={5} direction="row">
+                        <Button variant="text" onClick={handleLikeClick}>Like</Button>
+                        <Button variant="text" onClick={handleDislikeClick}>Dislike</Button>
+                    </Stack>
+                </div>
                 <button id="show" className="btn" onClick={() => setShowComments(!showComments)}>{showComments ? "Hide Comments" : "Show Comments"}</button>
                 {showComments ? <CommentsList /> : null}
             </CardContent>
