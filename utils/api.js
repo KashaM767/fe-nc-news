@@ -19,3 +19,10 @@ export const getArticle = (id) => {
             return data.article
         });
 };
+
+export const getComments = (id) => {
+    return newsApi.get(`/articles/${id}/comments`)
+        .then(({ data }) => {
+            return data.comments
+        });
+};

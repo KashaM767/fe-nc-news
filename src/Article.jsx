@@ -5,18 +5,15 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import ArticleCard from "./ArticleCard";
 import { useParams } from "react-router-dom";
+import CommentsList from "./CommentsList";
 
 const Article = ({ id }) => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
     const { article_id } = useParams();
-    console.log(id)
-
-
-
+    const [showComments, setShowComments] = useState(false);
 
     useEffect(() => {
         getArticle(article_id).then((article) => {
@@ -28,8 +25,6 @@ const Article = ({ id }) => {
                 setIsError(true)
             })
     }, [])
-
-
 
     if (isLoading) return <p>Loading...</p>
     if (isError) return <p>Something went wrong</p>
@@ -56,6 +51,8 @@ const Article = ({ id }) => {
                     <li>{article.comment_count} comments</li>
                     <li>{article.votes} votes</li>
                 </Typography>
+                <button id="show" className="btn" onClick={() => setShowComments(!showComments)}>{showComments ? "Hide Comments" : "Show Comments"}</button>
+                {showComments ? <CommentsList /> : null}
             </CardContent>
         </Card>
 
