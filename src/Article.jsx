@@ -20,6 +20,7 @@ const Article = () => {
     const [addVote, setAddVote] = useState(0);
 
     const handleLikeClick = () => {
+        article.votes++
         setAddVote((currVote) => currVote + 1);
         setIsError(false);
         patchArticleVote(article_id, { inc_votes: 1, })
@@ -29,6 +30,7 @@ const Article = () => {
     };
 
     const handleDislikeClick = () => {
+        article.votes--
         setAddVote((currVote) => currVote - 1);
         setIsError(false);
         patchArticleVote(article_id, { inc_votes: -1, })
