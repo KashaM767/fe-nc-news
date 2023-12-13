@@ -9,13 +9,11 @@ import { useNavigate } from 'react-router-dom';
 
 const ArticleCard = (props) => {
     const { article } = props
-    const [id, setId] = useState(0)
     const navigate = useNavigate();
 
     return (
         <Card sx={{ maxWidth: 225 }} className='item-card'>
             <CardActionArea onClick={() => {
-                setId(article.article_id);
                 navigate(`/articles/${article.article_id}`);
             }}>
                 <CardMedia

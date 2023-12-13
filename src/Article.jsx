@@ -10,7 +10,6 @@ import CommentsList from "./CommentsList";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-
 const Article = () => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +45,7 @@ const Article = () => {
             setIsLoading(false)
         })
             .catch((err) => {
-                console.log(err)
+                setIsLoading(false)
                 setIsError(true)
             })
     }, [])
