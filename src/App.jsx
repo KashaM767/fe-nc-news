@@ -19,7 +19,8 @@ function App() {
           <Route path="/articles" element={<ArticleList />} />
 
           <Route path="/articles/:article_id" element={<Article />} />
-          <Route path="/articles/:article_id/comments" element={<CommentsList />} />
+
+
 
         </Routes>
 
