@@ -4,7 +4,7 @@ import Header from './Header'
 import Home from './Home'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Article from './Article';
-import CommentsList from './CommentsList';
+import PostComment from './PostComment';
 
 
 

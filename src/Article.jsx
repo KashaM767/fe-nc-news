@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import CommentsList from "./CommentsList";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import PostComment from "./PostComment";
 
 const Article = () => {
     const [article, setArticle] = useState({});
@@ -79,6 +80,7 @@ const Article = () => {
                     <li>{article.comment_count} comments</li>
                     <li>{article.votes} votes</li>
                 </Typography>
+                <PostComment />
                 <div>
                     <Stack spacing={5} direction="row">
                         <Button variant="text" onClick={handleLikeClick}>Like</Button>
@@ -87,6 +89,7 @@ const Article = () => {
                 </div>
                 <button id="show" className="btn" onClick={() => setShowComments(!showComments)}>{showComments ? "Hide Comments" : "Show Comments"}</button>
                 {showComments ? <CommentsList /> : null}
+
             </CardContent>
         </Card>
 
