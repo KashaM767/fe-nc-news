@@ -19,6 +19,7 @@ const Article = () => {
     const [showComments, setShowComments] = useState(false);
     const [addVote, setAddVote] = useState(0);
 
+
     const handleLikeClick = () => {
         const copyArticle = { ...article }
         setArticle(copyArticle)
@@ -59,7 +60,7 @@ const Article = () => {
     if (isError) return <p>Something went wrong</p>
 
     return (
-        <Card sx={{ maxWidth: 300 }} className='item-card'>
+        <Card sx={{ maxWidth: 300 }} id='single-card'>
             <CardMedia
                 component="img"
                 height="140"
@@ -80,13 +81,13 @@ const Article = () => {
                     <li>{article.comment_count} comments</li>
                     <li>{article.votes} votes</li>
                 </Typography>
-                <PostComment />
                 <div>
                     <Stack spacing={5} direction="row">
                         <Button variant="text" onClick={handleLikeClick}>Like</Button>
                         <Button variant="text" onClick={handleDislikeClick}>Dislike</Button>
                     </Stack>
                 </div>
+                <PostComment />
                 <button id="show" className="btn" onClick={() => setShowComments(!showComments)}>{showComments ? "Hide Comments" : "Show Comments"}</button>
                 {showComments ? <CommentsList /> : null}
 
