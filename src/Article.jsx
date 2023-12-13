@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { useParams } from "react-router-dom";
 import CommentsList from "./CommentsList";
 
-const Article = ({ id }) => {
+const Article = () => {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
@@ -21,7 +21,7 @@ const Article = ({ id }) => {
             setIsLoading(false)
         })
             .catch((err) => {
-                console.log(err)
+                setIsLoading(false)
                 setIsError(true)
             })
     }, [])

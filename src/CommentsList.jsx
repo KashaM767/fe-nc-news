@@ -15,8 +15,8 @@ const CommentsList = () => {
             setIsLoading(false)
         })
             .catch((err) => {
-                console.log(err)
                 setIsError(true)
+                setIsLoading(false)
             })
     }, [])
 
