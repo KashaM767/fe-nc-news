@@ -3,11 +3,15 @@
   margin: 0 auto;
 }
 
-#header {
+#nav {
   background-color: rgb(0, 179, 255);
   text-align: center;
   height: 10%;
-  padding: 2em;
+  padding: 1em;
+  font-size: 1em;
+}
+
+#header {
   font-size: 2em;
 }
 
@@ -23,7 +27,7 @@ ul {
   margin: 0 2em 3em 2em;
   width: 400px;
   font-size: medium;
-  height: 70vh;
+  height: 53vh;
 }
 
 #single-card {
@@ -116,4 +120,8 @@ li {
 
 #comment-form {
   font-size: medium;
+}
+
+#delete-button {
+  font-size: smaller;
 }
