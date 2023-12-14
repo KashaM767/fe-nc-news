@@ -12,7 +12,7 @@
 }
 
 #header {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 ul {
@@ -73,7 +73,8 @@ li {
   margin-left: 20px
 }
 
-.comment-box {
+.comment-box,
+.topics-list {
   width: max-content;
   height: 100px;
   background-color: #e2ebe8;
@@ -124,4 +125,8 @@ li {
 
 #delete-button {
   font-size: smaller;
+}
+
+.topics-list {
+  font-size: 2em;
 }

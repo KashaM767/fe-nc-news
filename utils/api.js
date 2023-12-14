@@ -44,3 +44,10 @@ export const addArticleComment = (id, obj) => {
 export const deleteArticleComment = (id) => {
     return newsApi.delete(`/comments/${id}`)
 }
+
+export const getTopics = () => {
+    return newsApi.get(`/topics`)
+        .then(({ data }) => {
+            return data.topics
+        })
+}
