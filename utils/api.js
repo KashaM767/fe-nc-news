@@ -40,3 +40,7 @@ export const addArticleComment = (id, obj) => {
             return data.comment
         })
 }
+
+export const deleteArticleComment = (id) => {
+    return newsApi.delete(`/comments/${id}`)
+}
