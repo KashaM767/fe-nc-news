@@ -2,14 +2,14 @@ import ArticleCard from "./ArticleCard";
 import { useState, useEffect } from "react";
 import { getArticles } from '../utils/api';
 
-const ArticleList = () => {
+const ArticleList = ({ topic }) => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
 
 
     useEffect(() => {
-        getArticles().then((articlesArray) => {
+        getArticles(topic).then((articlesArray) => {
             setArticles(articlesArray)
             setIsLoading(false)
         })
@@ -17,7 +17,7 @@ const ArticleList = () => {
                 console.log(err)
                 setIsError(true)
             })
-    }, [])
+    }, [topic])
 
     if (isLoading) return <p>Loading...</p>
     if (isError) return <p>Something went wrong</p>
