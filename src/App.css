@@ -23,7 +23,7 @@ ul {
   margin: 0 2em 3em 2em;
   width: 400px;
   font-size: medium;
-  height: 70vh;
+  height: 53vh;
 }
 
 #single-card {
@@ -116,4 +116,8 @@ li {
 
 #comment-form {
   font-size: medium;
+}
+
+#delete-button {
+  font-size: smaller;
 }
