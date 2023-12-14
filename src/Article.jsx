@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import CommentsList from "./CommentsList";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import PostComment from "./PostComment";
 
 const Article = () => {
     const [article, setArticle] = useState({});
@@ -17,6 +18,7 @@ const Article = () => {
     const { article_id } = useParams();
     const [showComments, setShowComments] = useState(false);
     const [addVote, setAddVote] = useState(0);
+
 
     const handleLikeClick = () => {
         const copyArticle = { ...article }
@@ -58,7 +60,7 @@ const Article = () => {
     if (isError) return <p>Something went wrong</p>
 
     return (
-        <Card sx={{ maxWidth: 300 }} className='item-card'>
+        <Card sx={{ maxWidth: 300 }} id='single-card'>
             <CardMedia
                 component="img"
                 height="140"
@@ -85,8 +87,10 @@ const Article = () => {
                         <Button variant="text" onClick={handleDislikeClick}>Dislike</Button>
                     </Stack>
                 </div>
+                <PostComment />
                 <button id="show" className="btn" onClick={() => setShowComments(!showComments)}>{showComments ? "Hide Comments" : "Show Comments"}</button>
                 {showComments ? <CommentsList /> : null}
+
             </CardContent>
         </Card>
 

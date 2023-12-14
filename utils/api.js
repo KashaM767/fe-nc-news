@@ -33,3 +33,10 @@ export const patchArticleVote = (id, obj) => {
             return data.article
         });
 };
+
+export const addArticleComment = (id, obj) => {
+    return newsApi.post(`/articles/${id}/comments`, obj)
+        .then(({ data }) => {
+            return data.comment
+        })
+}
