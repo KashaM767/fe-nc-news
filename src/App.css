@@ -130,3 +130,7 @@ li {
 .topics-list {
   font-size: 2em;
 }
+
+a:link {
+  text-decoration: none;
+}

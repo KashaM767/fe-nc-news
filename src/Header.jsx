@@ -7,7 +7,8 @@ const Header = () => {
             <h1 id="header">NC News</h1>
             <p id="user">logged in as grumpy19</p>
             <Link to="/">Home</Link><br />
-            <Link to="/articles">Articles</Link>
+            <Link to="/articles">Articles</Link><br />
+            <Link to="/topics">Topics</Link>
         </nav>
 
     )
