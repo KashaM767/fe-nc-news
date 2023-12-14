@@ -27,7 +27,7 @@ const CommentsCard = (props) => {
             <li><p id="author">{comment.author} on {comment.created_at.slice(0, 10)}</p></li>
             <li><p>{comment.votes} comments  </p></li>
             <li><p>{comment.votes} votes</p></li>
-            <IconButton aria-label="delete" color="primary" id="delete-button" disabled={comment.author !== loggedInUser}
+            <IconButton aria-label="delete" color="primary" id="delete-button" disabled={comment.author !== loggedInUser || isSuccess}
                 onClick={handledeleteClick}>
 
                 <DeleteIcon />
