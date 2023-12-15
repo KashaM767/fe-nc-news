@@ -1,7 +1,7 @@
-#root {
-  max-width: 80%;
-  margin: 0 auto;
-}
+/* #root {
+  max-width: 100%;
+  margin: 10 auto;
+} */
 
 #nav {
   background-color: rgb(0, 179, 255);
@@ -9,12 +9,19 @@
   height: auto;
   padding: 1em;
   font-size: 1em;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 #nav li {
   display: inline;
-  font-size: 2em;
   color: black;
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  font-size: 1.5em;
 }
 
 
@@ -22,6 +29,7 @@
 #header {
   font-size: 4em;
   color: #03045e;
+  text-align: inherit;
 }
 
 ul {
