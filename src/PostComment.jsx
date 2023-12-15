@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { addArticleComment } from "../utils/api";
 
 const PostComment = () => {
-    const [username, setUsername] = useState("");
     const [body, setBody] = useState("");
     const [usernameError, setUsernameError] = useState(false);
     const [bodyError, setBodyError] = useState(false);
@@ -13,6 +12,7 @@ const PostComment = () => {
     const { article_id } = useParams();
     const [isError, setIsError] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false);
+    const username = "grumpy19"
 
     let newComment = {
         username, body
@@ -21,13 +21,8 @@ const PostComment = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        setUsernameError(false)
         setBodyError(false)
 
-        if (username === "") {
-            setUsernameError(true)
-            setIsError(true)
-        }
         if (body === "") {
             setBodyError(true)
             setIsError(true)
@@ -52,12 +47,7 @@ const PostComment = () => {
         <form id="comment-form" onSubmit={handleSubmit} className="post-comment"
             noValidate autoComplete="off" variant='outlined'>
             <h3>Add comment</h3>
-            {isError ? <h4>You must have a user account to post comments</h4> : null}
             {isSuccess ? <p>Your comment has been posted &#128512;</p> : null}
-            <TextField className="form-input" id="username" label="username" variant="outlined" margin="dense" required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                error={usernameError} />
 
             <TextField className="form-input" id="comment-body" label="comment" variant="outlined" margin="dense" multiline
                 value={body}
