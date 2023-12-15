@@ -1,15 +1,17 @@
 import ArticleCard from "./ArticleCard";
 import { useState, useEffect } from "react";
 import { getArticles } from '../utils/api';
+import { findTopic } from "./TopicSelect";
 
-const ArticleList = ({ topic }) => {
+
+const ArticleList = () => {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
-
+    const searchTopic = findTopic()
 
     useEffect(() => {
-        getArticles(topic).then((articlesArray) => {
+        getArticles(searchTopic).then((articlesArray) => {
             setArticles(articlesArray)
             setIsLoading(false)
         })
@@ -17,7 +19,7 @@ const ArticleList = ({ topic }) => {
                 console.log(err)
                 setIsError(true)
             })
-    }, [topic])
+    }, [searchTopic])
 
     if (isLoading) return <p>Loading...</p>
     if (isError) return <p>Something went wrong</p>

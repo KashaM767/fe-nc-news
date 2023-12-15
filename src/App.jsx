@@ -5,6 +5,7 @@ import Home from './Home'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Article from './Article';
 import TopicsList from './TopicsList';
+import TopicSelect from './TopicSelect';
 
 
 
@@ -18,7 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<ArticleList />} />
           <Route path="/topics" element={<TopicsList />} />
-          <Route path="/topics/:slug/articles" element={<ArticleList topic={"coding"} />}
+          <Route path="/topics/:slug/articles" element={<ArticleList />}
           />
           <Route path="/articles/:article_id" element={<Article />} />
 
