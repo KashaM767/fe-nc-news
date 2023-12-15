@@ -1,23 +1,24 @@
-import ArticleCard from "./ArticleCard";
+import { getTopics } from "../utils/api";
 import { useState, useEffect } from "react";
-import { getArticles } from '../utils/api';
+import TopicsCard from "./TopicsCard";
 
-const ArticleList = ({ topic }) => {
-    const [articles, setArticles] = useState([]);
+function TopicsList() {
+    const [topics, setTopics] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
 
 
     useEffect(() => {
-        getArticles(topic).then((articlesArray) => {
-            setArticles(articlesArray)
+        getTopics().then((TopicsArray) => {
+            setTopics(TopicsArray)
             setIsLoading(false)
         })
             .catch((err) => {
                 console.log(err)
                 setIsError(true)
             })
-    }, [topic])
+    }, [])
+
 
     if (isLoading) return <p>Loading...</p>
     if (isError) return <p>Something went wrong</p>
@@ -25,12 +26,12 @@ const ArticleList = ({ topic }) => {
     return (
 
         <ul>
-            {articles.map((article) => {
-                return <ArticleCard article={article} key={article.article_id} />
+            {topics.map((topic) => {
+                return <TopicsCard topic={topic} key={topic.slug} />
             })}
         </ul>
     )
 }
 
 
-export default ArticleList;
+export default TopicsList;

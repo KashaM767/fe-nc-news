@@ -4,7 +4,7 @@ import Header from './Header'
 import Home from './Home'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Article from './Article';
-import PostComment from './PostComment';
+import TopicsList from './TopicsList';
 
 
 
@@ -17,7 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<ArticleList />} />
-
+          <Route path="/topics" element={<TopicsList />} />
+          <Route path="/topics/:slug/articles" element={<ArticleList topic={"coding"} />}
+          />
           <Route path="/articles/:article_id" element={<Article />} />
 
 
