@@ -34,6 +34,7 @@ const PostComment = () => {
         addArticleComment(article_id, newComment)
             .then(() => {
                 newComment = {}
+                setBody("")
                 setIsError(false)
                 setIsSuccess(true)
             })
