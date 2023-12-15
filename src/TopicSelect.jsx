@@ -7,7 +7,7 @@ export function findTopic() {
 }
 
 
-const TopicSelect = ({ props }) => {
+const TopicSelect = () => {
     return <ArticleList findTopic />
 }
 

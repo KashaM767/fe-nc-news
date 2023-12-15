@@ -6,8 +6,6 @@ import { addArticleComment } from "../utils/api";
 
 const PostComment = () => {
     const [body, setBody] = useState("");
-    const [usernameError, setUsernameError] = useState(false);
-    const [bodyError, setBodyError] = useState(false);
     const [comments, setComments] = useState([]);
     const { article_id } = useParams();
     const [isError, setIsError] = useState(false)
@@ -21,12 +19,6 @@ const PostComment = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        setBodyError(false)
-
-        if (body === "") {
-            setBodyError(true)
-            setIsError(true)
-        }
         setComments((currComments) => {
             return [newComment, ...currComments];
         });
@@ -50,12 +42,12 @@ const PostComment = () => {
             <h3>Add comment</h3>
             {isSuccess ? <p>Your comment has been posted &#128512;</p> : null}
 
-            <TextField className="form-input" id="comment-body" label="comment" variant="outlined" margin="dense" multiline
+            <TextField className="form-input" id="comment-body" label="comment" variant="outlined" margin="dense" multiline required
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
-                error={bodyError} />
+            />
 
-            <Button color="primary" onClick={handleSubmit}>Submit</Button>
+            <Button color="primary" onClick={handleSubmit} disabled={body === ""}>Submit</Button>
         </form>
     )
 }
