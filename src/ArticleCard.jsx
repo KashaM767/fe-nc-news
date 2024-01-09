@@ -17,7 +17,7 @@ const ArticleCard = (props) => {
             }}>
                 <CardMedia
                     component="img"
-                    height="100"
+                    height="140"
                     alt={article.title}
                     image={article.article_img_url}
                 />
