@@ -25,13 +25,6 @@ const ArticleCard = (props) => {
                     <Typography variant="h5" component="div" id="article_title">
                         <li>{article.title}</li>
                     </Typography>
-                    <Typography variant="h6" component="div" id="author">
-                        <li>{article.author}</li>
-                    </Typography>
-                    <Typography variant="h6" component="div" id="card-links">
-                        <li>{article.comment_count} comments</li>
-                        <li>{article.votes} votes</li>
-                    </Typography>
                 </CardContent>
             </CardActionArea >
         </Card>

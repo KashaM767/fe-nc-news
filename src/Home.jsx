@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import TopicsList from "./TopicsList";
-
-
-
+;
 
 const Home = () => {
     return (

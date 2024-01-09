@@ -24,8 +24,6 @@
   font-size: 1.5em;
 }
 
-
-
 #header {
   font-size: 4em;
   color: #03045e;
@@ -43,8 +41,8 @@ ul {
 .item-card {
   margin: 0 2em 3em 2em;
   width: 400px;
-  font-size: medium;
-  height: 53vh;
+  font-size: large;
+  height: 30vh;
 }
 
 #single-card {
@@ -58,16 +56,16 @@ ul {
 
 #article_title {
   font-family: 'Courier New', Courier, monospace;
-  font-size: large;
-  font-weight: 500;
+  font-size: larger;
+  font-weight: 600;
   text-align: center;
 }
 
 #card-links {
   margin-top: 2em;
-  font-size: medium;
+  font-size: large;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-align: left;
   margin-right: 0
 }
@@ -77,8 +75,6 @@ ul {
   font-size: medium;
   font-weight: 500;
 }
-
-
 
 li {
   display: inline;
@@ -97,7 +93,13 @@ li {
   margin: 1em;
   text-align: left;
   padding: 1em;
-  align-items: center;
+  align-items: left;
+}
+
+.comment-box {
+  width: 100%;
+  margin: 7px 0;
+  padding: 0;
 }
 
 .home-links {
@@ -112,7 +114,7 @@ li {
 
 .comment-box li {
   column-gap: 40px;
-  margin: 1em;
+  margin: 0.5em;
   font-size: large;
 }
 

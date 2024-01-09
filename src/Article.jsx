@@ -68,16 +68,16 @@ const Article = () => {
                 image={article.article_img_url}
             />
             <CardContent>
-                <Typography variant="h5" component="div" id="article_title">
+                <Typography variant="h4" component="div" id="article_title">
                     <li>{article.title}</li>
                 </Typography>
-                <Typography variant="h6" component="div" id="card-links">
+                <Typography variant="h4" component="div" id="card-links">
                     <li>{article.body}</li>
                 </Typography>
-                <Typography variant="h6" component="div" id="author">
+                <Typography variant="h4" component="div" id="author">
                     <li>{article.author} on {article.created_at.slice(0, 10)}</li>
                 </Typography>
-                <Typography variant="h6" component="div" id="card-links">
+                <Typography variant="h4" component="div" id="card-links">
                     <li>{article.comment_count} comments</li>
                     <li>{article.votes} votes</li>
                 </Typography>
