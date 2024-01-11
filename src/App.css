@@ -7,7 +7,7 @@
   background-color: rgb(0, 179, 255);
   text-align: center;
   height: auto;
-  padding: 1em;
+  padding: 0.2em;
   font-size: 1em;
   width: auto;
   display: flex;
@@ -19,7 +19,7 @@
   display: inline;
   color: black;
   display: flex;
-  align-self: center;
+  align-self: flex-end;
   flex-wrap: wrap;
   font-size: 1.5em;
 }
@@ -27,7 +27,11 @@
 #header {
   font-size: 4em;
   color: #03045e;
-  text-align: inherit;
+  text-align: center;
+}
+
+#user {
+  text-align: right;
 }
 
 ul {
@@ -67,8 +71,12 @@ ul {
   font-size: large;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   margin-right: 0
+}
+
+.vote-button {
+  align-items: center;
 }
 
 #author {

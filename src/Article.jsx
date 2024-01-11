@@ -60,7 +60,7 @@ const Article = () => {
     if (isError) return <p>Something went wrong</p>
 
     return (
-        <Card sx={{ maxWidth: 300 }} id='single-card'>
+        <Card sx={{ maxWidth: 600 }} id='single-card'>
             <CardMedia
                 component="img"
                 height="140"
@@ -82,7 +82,7 @@ const Article = () => {
                     <li>{article.votes} votes</li>
                 </Typography>
                 <div>
-                    <Stack spacing={5} direction="row">
+                    <Stack spacing={5} direction="row" className="vote-button">
                         <Button variant="text" onClick={handleLikeClick}>Like</Button>
                         <Button variant="text" onClick={handleDislikeClick}>Dislike</Button>
                     </Stack>
