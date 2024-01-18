@@ -71,7 +71,7 @@ const Article = () => {
                 <Typography variant="h4" component="div" id="article_title">
                     <li>{article.title}</li>
                 </Typography>
-                <Typography variant="h4" component="div" id="card-links">
+                <Typography variant="h6" component="div" id="card-body">
                     <li>{article.body}</li>
                 </Typography>
                 <Typography variant="h4" component="div" id="author">
