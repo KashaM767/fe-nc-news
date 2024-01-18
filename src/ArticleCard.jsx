@@ -11,7 +11,7 @@ const ArticleCard = (props) => {
     const navigate = useNavigate();
 
     return (
-        <Card sx={{ maxWidth: 225 }} className='item-card'>
+        <Card sx={{ maxWidth: 300 }} className='item-card'>
             <CardActionArea onClick={() => {
                 navigate(`/articles/${article.article_id}`);
             }}>
